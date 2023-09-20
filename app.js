@@ -8,9 +8,10 @@ const express = require('express'); // carga el módulo Express
 const mongoose = require('mongoose'); // carga el módulo Mongoose
 const Meeting = require('./models/meeting'); // carga el esquema de Mongoose que generamos en la carpeta "models"
 const dotenv = require('dotenv').config() // Cargo el módulo para usar variables de entorno
+const cors = require('cors') // Cargo el módulo para permitir conexiones desde el frontend
 
 const app = express(); // instancia nuetra app
-
+app.use(cors()) // Hago que la aplicación use cors
 /*
 usa el método .conect() de Mongoose
 para conectarse a nuestra base de datos online MongoDB Altas,
